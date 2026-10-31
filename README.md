@@ -53,7 +53,7 @@ The full analysis, with code, interpretation of every step and validation, is in
 
 | Data | Source |
 |---|---|
-| CRCL share price | Yahoo Finance (yfinance) |
+| CRCL share price and S&P 500 (for beta) | Yahoo Finance (yfinance) |
 | 3-month T-bill (DTB3) and 10-year Treasury yield (DGS10) | FRED, Federal Reserve Bank of St. Louis |
 | USDC supply | DefiLlama |
 | Circle quarterly results, balance sheet and shares | Circle 8-K earnings releases and 10-Q (SEC) |
@@ -82,7 +82,7 @@ pip install -r requirements.txt
 jupyter notebook notebooks/circle_valuation.ipynb
 ```
 
-Tested with Python 3.14 and the package versions in `requirements.txt`. Run all cells in order (Kernel > Restart and Run All). The notebook downloads the market data, cuts it at 17 October 2026 and reproduces every result in about one minute. The random seed is fixed, so the results are identical on every run.
+Tested with Python 3.14 and the package versions in `requirements.txt`. Run all cells in order (Kernel > Restart and Run All). The notebook downloads the market data, cuts it at 17 October 2026 and reproduces every result in about one minute. The random seed is fixed; small differences can appear only if a data provider later revises its history. The CSV files in `data/` are the exact CRCL price, T-bill, USDC and quarterly series used for the results in the report.
 
 ## Limitations
 
