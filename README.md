@@ -2,6 +2,8 @@
 
 A stochastic DCF of Circle Internet Group (NYSE: CRCL), the issuer of the USDC stablecoin. Circle earns the interest on the reserves backing USDC, so its value depends on two uncertain variables: interest rates and the amount of USDC in circulation. The model simulates both as correlated stochastic processes, values the company on each simulated path, and then reverses the problem to ask what the market price implies.
 
+![200 of 10,000 simulated paths of the short rate (Vasicek) and USDC supply (GBM), base case](report/figures/monte_carlo_paths.png)
+
 **Question.** How much is Circle worth when its revenue depends on stochastic interest rates and USDC supply, and which rate path and USDC growth does the share price imply?
 
 **Answer.** At $82.22 (16 October 2026), the market prices USDC growth of about **24% a year to 2030** at the Fed's projected rate path, roughly 60% of Circle's 40% target. If the target were met, the model values the share at **$214 on average (median $151)**.
@@ -14,6 +16,8 @@ A stochastic DCF of Circle Internet Group (NYSE: CRCL), the issuer of the USDC s
 | USDC growth to 2030 implied by the price (Fed rate 3.2%) | 24.0% a year |
 | Long-run rate that would justify the price with 40% growth | 0.63% |
 | Implied return at $82.22: base case / no USDC growth | 17.7% / 4.7% a year |
+
+![Distribution of value per share across 10,000 paths vs the market price](report/figures/value_distribution.png)
 
 All data are cut at 17 October 2026.
 
@@ -67,6 +71,7 @@ The full analysis, with code, interpretation of every step and validation, is in
 circle-valuation/
 ├── notebooks/circle_valuation.ipynb   full analysis (sections 1-8)
 ├── report/CRCL_valuation_report.pdf   5-page valuation note
+├── report/figures/                    figures used in this README
 ├── data/                              market data saved by the notebook (cut at 17 Oct 2026)
 ├── requirements.txt
 └── README.md
